@@ -20,13 +20,9 @@ def copy_page_data_to_content_streamfield(apps, schema_editor):
         for revision in page.revisions.all():
             revision_data = json.loads(revision.content_json)
             content_data = page_data_to_content_streamfield_data(revision_data)
-            # StreamField data is stored in revision.content_json in a string field
-            for block_data in content_data:
-                if isinstance(block_data['value'], list):
-                    block_data['value'] = json.dumps(
-                        block_data['value'], cls=DjangoJSONEncoder)
             if content_data != revision_data.get('content'):
-                revision_data['content'] = content_data
+                # StreamField data is stored in revision.content_json in a string field
+                revision_data['content'] = json.dumps(content_data)
                 revision.content_json = json.dumps(
                     revision_data, cls=DjangoJSONEncoder)
                 revision.save()
