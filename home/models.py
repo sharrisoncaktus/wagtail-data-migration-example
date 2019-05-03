@@ -21,7 +21,7 @@ class ExamplePage(Page):
             ('docs',
              StreamBlock([
                  ('doc', DocumentChooserBlock()),
-                 ('image', PageChooserBlock()),
+                 ('page', PageChooserBlock()),
              ])),
         ],
         blank=True,
