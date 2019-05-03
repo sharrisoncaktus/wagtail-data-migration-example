@@ -23,30 +23,9 @@ class ExamplePage(Page):
                  ('doc', DocumentChooserBlock()),
                  ('page', PageChooserBlock()),
              ])),
-        ],
-        blank=True,
-        null=True,
+        ]
     )
-
-    # old fields retained for now
-    image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-    )
-    body = RichTextField()
-    docs = StreamField([
-        ('doc', DocumentChooserBlock()),
-        ('page', PageChooserBlock()),
-    ])
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('content'),
-
-        # old panels retained for now
-        ImageChooserPanel('image'),
-        FieldPanel('body'),
-        StreamFieldPanel('docs'),
     ]
