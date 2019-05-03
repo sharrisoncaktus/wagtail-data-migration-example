@@ -14,17 +14,19 @@ class HomePage(Page):
 
 
 class ExamplePage(Page):
-    content = StreamField([
-        ('image', ImageChooserBlock()),
-        ('text', RichTextBlock()),
-        ('docs',
-         StreamBlock([
-             ('doc', DocumentChooserBlock()),
-             ('image', PageChooserBlock()),
-         ])),
-    ],
-                          blank=True,
-                          null=True)
+    content = StreamField(
+        [
+            ('image', ImageChooserBlock()),
+            ('text', RichTextBlock()),
+            ('docs',
+             StreamBlock([
+                 ('doc', DocumentChooserBlock()),
+                 ('image', PageChooserBlock()),
+             ])),
+        ],
+        blank=True,
+        null=True,
+    )
 
     # old fields retained for now
     image = models.ForeignKey(
