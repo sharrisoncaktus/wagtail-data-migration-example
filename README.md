@@ -28,7 +28,8 @@ $ mkvirtualenv wagtail-data-migration-example # or your prefered virtualenv setu
    - **Step 1:** Add new fields to the model without moving or renaming anything.
    - **Step 2:** Create a data migration that maps / copies all the data from the old fields to the new fields, without modifying the existing fields. (Treat existing data as immutable at this point.)
    - **Step 3:** Deploy the migration and let editors review everything, making sure that all the data was correctly copied.
-   - **Step 4:** Create final migration that deletes the old data, and deploy it with updated templates that use the new fields.
+   - **Step 4:** Switch the site templates / API to the new fields.
+   - **Step 5:** Create final migration that deletes the old data, and deploy it with updated templates that use the new fields.
 4. Data migrations involving StreamFields are best done by using Page.to_json() and Revision.content_json as the data starting point.
    - These data structures are almost identical, so you can use the same function to map page / revision data to new values.
 5. Data migrations involving StreamFields are best done by writing directly to the stream_data property of the StreamField.
@@ -41,7 +42,7 @@ The above rules & steps are shown in the revision history. To get the full exper
 * [ffe4354a0a46e2c39df7730e0c95a26df8726db4](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/ffe4354a0a46e2c39df7730e0c95a26df8726db4) – Adds ExamplePage model
 * [148997a82c5470854dbe93e8dbfd120080c2260e](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/148997a82c5470854dbe93e8dbfd120080c2260e) – Adds pages to docs StreamField in ExamplePage
 * [8c4b22e32bd9421a3f89a49b7c1300c243606f5d](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/8c4b22e32bd9421a3f89a49b7c1300c243606f5d) – Adds a content StreamField to ExamplePage
-* [842f38c8de3c35bfa1593f221695539f923f5f3b](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/842f38c8de3c35bfa1593f221695539f923f5f3b) – Data migration copies page data to ExamplePage.content
+* [b58cb7226be9ab9eec808aaa5393c3b77d94ab08](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/b58cb7226be9ab9eec808aaa5393c3b77d94ab08) – Data migration copies page data to ExamplePage.content
 * [dfc33cdff13724e5485f515676970ac555d6c403](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/dfc33cdff13724e5485f515676970ac555d6c403) – Removes old page data
 
 For each tag, run the migrations, then run the server, and create / edit an ExamplePage that uses the model.
