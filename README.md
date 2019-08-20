@@ -39,11 +39,11 @@ $ mkvirtualenv wagtail-data-migration-example # or your prefered virtualenv setu
 
 The above rules & steps are shown in the revision history. To get the full experience, check out each of the following branches in order:
 
-* [Step 1](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.1.0-example-page) – Adds ExamplePage model
-* [Step 2](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.2.0-add-pages-to-docs) – Adds pages to docs StreamField in ExamplePage
-* [Step 3](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.3.0-content-streamfield) – Adds a content StreamField to ExamplePage
-* [Step 4](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.4.0-data-migration) – Data migration copies page data to ExamplePage.content
-* [Step 5](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.5.0-remove-old-page-data) – Removes old page data
+* [Step 1](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.1-example-page) – Adds ExamplePage model
+* [Step 2](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.2-add-pages-to-docs) – Adds pages to docs StreamField in ExamplePage
+* [Step 3](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.3-content-streamfield) – Adds a content StreamField to ExamplePage
+* [Step 4](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.4-data-migration) – Data migration copies page data to ExamplePage.content
+* [Step 5](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.5-remove-old-page-data) – Removes old page data
 
 For each branch, run the migrations, then run the server, and create / edit an ExamplePage that uses the model.
 
