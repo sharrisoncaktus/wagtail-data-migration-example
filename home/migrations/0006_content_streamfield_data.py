@@ -11,6 +11,8 @@ from wagtail.core.blocks import StreamValue
 
 def copy_page_data_to_content_streamfield(apps, schema_editor):
     """With the given page, copy the page data to the content stream_data"""
+    # If the ExamplePage model has been deleted, an AttributeError is raised
+    # -- in which case, return directly without doing the pointless data migration.
     try:
         ExamplePage = import_module('home.models').ExamplePage
     except AttributeError:
@@ -35,8 +37,7 @@ def copy_page_data_to_content_streamfield(apps, schema_editor):
 def prevent_reverse_migration(apps, schema_editor):
     raise NotImplementedError(
         "This migration cannot be reversed without inordinate expenditure of time."
-        + " You can `--fake` it if you know what you're doing," 
-        + " and are a migration ninja.", )
+        + " You can `--fake` it if you know what you're doing, O migration ninja.", )
 
 
 class Migration(migrations.Migration):
