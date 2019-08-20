@@ -11,7 +11,10 @@ from wagtail.core.blocks import StreamValue
 
 def copy_page_data_to_content_streamfield(apps, schema_editor):
     """With the given page, copy the page data to the content stream_data"""
-    ExamplePage = import_module('home.models').ExamplePage
+    try:
+        ExamplePage = import_module('home.models').ExamplePage
+    except AttributeError:
+        return
     for page in ExamplePage.objects.all():
         page_data = json.loads(page.to_json())
         content_data = page_data_to_content_streamfield_data(page_data)
@@ -30,12 +33,10 @@ def copy_page_data_to_content_streamfield(apps, schema_editor):
 
 
 def prevent_reverse_migration(apps, schema_editor):
-    return
     raise NotImplementedError(
-        "This migration cannot be reversed without" +
-        " inordinate expenditure of time. You can" +
-        " `--fake` it if you know what you're doing," +
-        " and are a migration ninja.", )
+        "This migration cannot be reversed without inordinate expenditure of time."
+        + " You can `--fake` it if you know what you're doing," 
+        + " and are a migration ninja.", )
 
 
 class Migration(migrations.Migration):
