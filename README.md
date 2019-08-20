@@ -37,13 +37,13 @@ $ mkvirtualenv wagtail-data-migration-example # or your prefered virtualenv setu
 
 ## Worked Examples of the Rules and the Steps
 
-The above rules & steps are shown in the revision history. To get the full experience, check out each of the revisions in order:
+The above rules & steps are shown in the revision history. To get the full experience, check out each of the following branches in order:
 
-* [Step 1](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/ffe4354a0a46e2c39df7730e0c95a26df8726db4) – Adds ExamplePage model
-* [Step 2](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/148997a82c5470854dbe93e8dbfd120080c2260e) – Adds pages to docs StreamField in ExamplePage
-* [Step 3](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/8c4b22e32bd9421a3f89a49b7c1300c243606f5d) – Adds a content StreamField to ExamplePage
-* [Step 4](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.4.0) – Data migration copies page data to ExamplePage.content
-* [Step 5](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/dfc33cdff13724e5485f515676970ac555d6c403) – Removes old page data
+* [Step 1](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.1.0-example-page) – Adds ExamplePage model
+* [Step 2](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.2.0-add-pages-to-docs) – Adds pages to docs StreamField in ExamplePage
+* [Step 3](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.3.0-content-streamfield) – Adds a content StreamField to ExamplePage
+* [Step 4](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.4.0-data-migration) – Data migration copies page data to ExamplePage.content
+* [Step 5](https://github.com/sharrisoncaktus/wagtail-data-migration-example/tree/0.5.0-remove-old-page-data) – Removes old page data
 
-For each tag, run the migrations, then run the server, and create / edit an ExamplePage that uses the model.
+For each branch, run the migrations, then run the server, and create / edit an ExamplePage that uses the model.
 
