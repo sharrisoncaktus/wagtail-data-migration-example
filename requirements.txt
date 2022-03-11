@@ -9,7 +9,7 @@ djangorestframework==3.9.3
 draftjs-exporter==2.1.5
 html5lib==1.0.1
 idna==2.8
-Pillow==5.4.1
+Pillow==9.0.1
 pytz==2019.1
 requests==2.21.0
 six==1.12.0
